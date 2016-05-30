@@ -1,0 +1,17 @@
+<%= link_to "New", new_document_path, :class=>"btn btn-primary btn-margin" %>
+
+<table class="table table-striped">
+  <tr>
+    <th>Name</th>
+    <th>Action</th>
+  </tr>
+  <% @documents.each do |document| %>
+    <tr>
+      <td><%= document.title.html_safe %></td>
+      <td>
+        <%= link_to "Edit", edit_document_path(document) %> |
+        <%= link_to "Remove", document, :method=>:delete %>
+      </td>
+    </tr>
+  <% end %>
+</table>
